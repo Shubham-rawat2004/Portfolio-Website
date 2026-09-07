@@ -395,7 +395,6 @@
 
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 26px;
     }
 
@@ -405,36 +404,39 @@
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.1);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: minmax(320px, 460px) 1fr;
+      align-items: stretch;
     }
 
     .project-card:hover {
-      transform: translateY(-6px) scale(1.01);
+      transform: translateY(-6px) scale(1.005);
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
     }
 
     .project-card img {
-      height: 190px;
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
       object-fit: cover;
     }
 
     .project-content {
-      padding: 18px 20px 24px;
+      padding: 32px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      height: 100%;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .project-content h3 {
+      font-size: 1.45rem;
     }
 
     .project-content p {
       color: var(--muted);
-      font-size: 0.95rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      min-height: 4.8em;
+      font-size: 1rem;
+      line-height: 1.7;
     }
 
     .muted {
@@ -549,6 +551,16 @@
       }
       .project-grid {
         grid-template-columns: 1fr;
+      }
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+      .project-card img {
+        height: 220px;
+        min-height: auto;
+      }
+      .project-content {
+        padding: 24px 20px;
       }
       .cta {
         padding: 26px;
@@ -792,7 +804,7 @@
 
   <section id="projects" class="section">
     <div class="container">
-      <h2 class="section-title reveal">Selected Projects</h2>
+      <h2 class="section-title reveal">Featured Project</h2>
       <p class="section-subtitle reveal">A glimpse at products I've shipped end-to-end - from architecture to deployment.</p>
       <div class="project-grid">
         <article class="project-card reveal">
@@ -803,38 +815,8 @@
             <div class="project-tags">
               <span>.NET 8</span><span>Angular</span><span>Kubernetes</span><span>Redis</span><span>RabbitMQ</span>
             </div>
-            <div style="margin-top: 14px;">
+            <div style="margin-top: 10px;">
               <a class="btn btn-ghost" href="https://github.com/Shubham-rawat2004/EshopMart" target="_blank" rel="noopener" id="projectBtnEshopMart">
-                <i class="fa-brands fa-github"></i>View Code
-              </a>
-            </div>
-          </div>
-        </article>
-        <article class="project-card reveal">
-          <img src="fiddlerProject.png" alt="Fiddler Calls Visualizer" />
-          <div class="project-content">
-            <h3>Fiddler Calls Visualizer</h3>
-            <p>Interactive graph-based tool to explore HTTP traffic from Fiddler HAR logs with filters and debugging tools.</p>
-            <div class="project-tags">
-              <span>Node.js</span><span>Express</span><span>D3.js</span><span>Bootstrap</span>
-            </div>
-            <div style="margin-top: 14px;">
-              <a class="btn btn-ghost" href="https://github.com/Shubham-rawat2004/FiddlerMapper" target="_blank" rel="noopener" id="projectBtnFiddlerMapper">
-                <i class="fa-brands fa-github"></i>View Code
-              </a>
-            </div>
-          </div>
-        </article>
-        <article class="project-card reveal">
-          <img src="CrudProject.png" alt="CRUD API with Swagger" />
-          <div class="project-content">
-            <h3>CRUD API with Swagger</h3>
-            <p>Secure Node.js CRUD API with auth, email activation, product management, and Swagger docs.</p>
-            <div class="project-tags">
-              <span>Node.js</span><span>MongoDB</span><span>Swagger</span><span>GitHub Actions</span>
-            </div>
-            <div style="margin-top: 14px;">
-              <a class="btn btn-ghost" href="https://github.com/Shubham-rawat2004/SABAK" target="_blank" rel="noopener" id="projectBtnSabak">
                 <i class="fa-brands fa-github"></i>View Code
               </a>
             </div>
